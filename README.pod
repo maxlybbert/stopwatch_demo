@@ -1,0 +1,32 @@
+=pod
+
+=encoding utf8
+
+=head1 Purpose
+
+A few years ago, my son needed a stopwatch for a science fair project.  I wrote
+one using Gtkmm.  I lost that code, but thought it made a good base for an
+example project.  I've recreated it in this project.  While I think this
+stopwatch works fine, I expect most people to already have access to a
+perfectly good stopwatch on their phone.  Many people probably have access
+to more than one.
+
+Instead this project serves only as a demo of how I think about GUI
+programming.  It's been cleaned up from the original somewhat.  The original
+code had two threads:  the GUI thread and the thread that actually kept track
+of time.  It turns out that there is no need for a second thread.  The
+original project wasn't localized (the F<stopwatch.conf> file).  The original
+project's UI thread was focused on a state machine to properly process the
+events coming from the second thread.  Instead of doing that, I now change
+the event handlers accordingly.  However, the code has never relied on
+inheritance the way that many GUI tutorials do.  If anything, this project
+shows that it is possible to implement a project in Gtkmm without inheriting
+from C<Gtkmm::Application> or  C<Gtkmm::Frame>, etc.
+
+=head1 Tests
+
+Unfortunately, this is the kind of code that doesn't lend itself to tests.
+Once you strip out the UI-related code, most of what's left involves asking
+for a current point in time, and determining how much time has elapsed since an
+earlier point.  I love tests, but I don't see a good way to include them in
+this project.

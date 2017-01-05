@@ -1,0 +1,6 @@
+=pod
+
+=encoding utf8
+
+This code is released to the public doamin.
+
