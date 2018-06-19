@@ -12,16 +12,10 @@ perfectly good stopwatch on their phone.  Many people probably have access
 to more than one.
 
 Instead this project serves only as a demo of how I think about GUI
-programming.  It's been cleaned up from the original somewhat.  The original
-code had two threads:  the GUI thread and the thread that actually kept track
-of time.  It turns out that there is no need for a second thread.  The
-original project wasn't localized (the F<stopwatch.conf> file).  The original
-project's UI thread was focused on a state machine to properly process the
-events coming from the second thread.  Instead of doing that, I now change
-the event handlers accordingly.  However, the code has never relied on
-inheritance the way that many GUI tutorials do.  If anything, this project
-shows that it is possible to implement a project in gtkmm without inheriting
-from C<Gtk::Window> or other widgets.
+programming.  The code has never relied on inheritance the way that many GUI
+tutorials do.  If nothing else, this project shows that it is possible to
+implement a project in gtkmm without inheriting from C<Gtk::Window> or other
+widgets.
 
 =head1 Tests
 
